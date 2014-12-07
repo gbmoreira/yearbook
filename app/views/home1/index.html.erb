@@ -1,19 +1,49 @@
-<h1>Home1#index</h1>
-<p>Find me in app/views/home1/index.html.erb</p>
+<!-- Main jumbotron for a primary marketing message or call to action -->
+<div class="container">
+  <!-- Example row of columns -->
+  <div class="row">
+        <div class="col-md-4">
+      <p>       <img src="/images/yearbook.gif" alt="rss feed" width="471" height="181" />
+
+      </p>
+    </div>
+    <div class="col-md-4"></div>
+    <div class="col-md-4">
+      <% if notice %>
+      <p id="notice"><%= notice %></p>
+      <% end %>
+      <table class="table table-striped" data-toggle="table">
+        <tbody>
+          Profiles
+          <% @users.each do |user| %>
+          <tr> 
+           <td><%= image_tag  user.avatar(:thumb) %>
+           <%= link_to user.nome, user_path(user) %></td>
+         </tr>
+         <% end %>
+       </tbody>
+     </table>
+   </div>
+ </div>
+
+ <hr>
 
 
-<% if notice %>
-<p id="notice"><%= notice %></p>
-<% end %>
-<table class="table table-striped">
-  <tbody>
- 
-<% @users.each do |user| %>
-     <tr> 
-       <td><%= link_to user.nome, user_path(user) %></td>
-       <td><%= image_tag  user.avatar(:thumb) %></td>
+</div> <!-- /container -->
+    <div class="col-md-4">
+      <h2>ENADE</h2>
+      <p>   <img src="/images/enade.jpg" alt="rss feed" width="277" height="220" />
+      </p>
+      <p><a class="btn btn-default" href="http://enadeies.inep.gov.br/enadeIes/" role="button">View details &raquo;</a></p>
+    </div> 
 
-    </tr>
-<% end %>
-  </tbody>
-</table>
+<div class="jumbotron">
+  <div class="container">
+    <img src="/images/yearbook.jpg" alt="rss feed" width="214" height="151" />
+    <p>This an application to have fun with your friends. Photos, profile's studends of Unifal-MG</p>
+  </div>
+</div>
+
+<footer>
+  <p>&copy; Company 2014</p>
+</footer>
