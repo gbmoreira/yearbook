@@ -1,0 +1,19 @@
+<h1>Home1#index</h1>
+<p>Find me in app/views/home1/index.html.erb</p>
+
+
+<% if notice %>
+<p id="notice"><%= notice %></p>
+<% end %>
+<table class="table table-striped">
+  <tbody>
+ 
+<% @users.each do |user| %>
+     <tr> 
+       <td><%= link_to user.nome, user_path(user) %></td>
+       <td><%= image_tag  user.avatar(:thumb) %></td>
+
+    </tr>
+<% end %>
+  </tbody>
+</table>
